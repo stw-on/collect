@@ -1,0 +1,61 @@
+version: '3'
+
+volumes:
+  db: {}
+  redis: {}
+  clamav: {}
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: development.dockerfile
+    volumes:
+      - ./:/app
+    ports:
+      - 8081:80
+    restart: on-failure
+  worker:
+    build:
+      context: .
+      dockerfile: development.dockerfile
+    volumes:
+      - ./:/app
+    command: worker
+    restart: on-failure
+  scheduler:
+    build:
+      context: .
+      dockerfile: development.dockerfile
+    volumes:
+      - ./:/app
+    command: scheduler
+    restart: on-failure
+  ui:
+    image: node:alpine
+    volumes:
+      - ./ui:/app/ui
+    working_dir: /app/ui
+    ports:
+      - 8080:8080
+    command: sh -c "yarn && exec yarn serve --port 8080"
+    restart: on-failure
+  db:
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db:/var/lib/postgresql/data
+    restart: on-failure
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis:/data
+    restart: on-failure
+  clam:
+    image: stwon/docker-clamav
+    volumes:
+      - clamav:/data
+    restart: on-failure
