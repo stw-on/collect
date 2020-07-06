@@ -20,7 +20,7 @@ FROM php:7.4-apache
 
 WORKDIR /app
 
-RUN apt-get update -y
+RUN apt-get update -y \
     && a2enmod rewrite \
     && apt-get -y install libpq-dev wait-for-it \
     && docker-php-ext-install pdo pgsql pdo_pgsql sockets \
@@ -31,6 +31,5 @@ RUN apt-get update -y
     && ln -s /app/docker/php.ini /usr/local/etc/php/conf.d/99-app.ini
 
 COPY --from=stage2 /app /app
-COPY ./docker/nginx/* /nginx/
 
 ENTRYPOINT ["/app/docker/entrypoint.sh"]
