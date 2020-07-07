@@ -12,6 +12,7 @@
             :template-field="field"
             :disabled="uploading"
             v-model="fieldsFiles[field.id]"
+            class="mb-2"
           />
 
           <v-expand-transition group>
