@@ -22,8 +22,8 @@ WORKDIR /app
 
 RUN apt-get update -y \
     && a2enmod rewrite \
-    && apt-get -y install libpq-dev wait-for-it \
-    && docker-php-ext-install pdo pgsql pdo_pgsql sockets yaml libyaml-dev \
+    && apt-get -y install libpq-dev wait-for-it libyaml-dev \
+    && docker-php-ext-install pdo pgsql pdo_pgsql sockets yaml \
     && pecl install redis \
     && pecl install yaml \
     && docker-php-ext-enable redis yaml \
