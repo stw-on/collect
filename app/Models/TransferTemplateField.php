@@ -21,8 +21,17 @@ class TransferTemplateField extends BaseModel
         'allowed_mimes' => 'array',
     ];
 
+    protected $fillable = [
+        'name',
+        'description',
+        'allowed_mimes',
+        'min_count',
+        'max_count',
+        'max_size_kb',
+    ];
+
     public function template()
     {
-        return $this->belongsTo(TransferTemplate::class);
+        return $this->belongsTo(TransferTemplate::class, 'transfer_template_id');
     }
 }

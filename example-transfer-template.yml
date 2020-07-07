@@ -1,0 +1,15 @@
+name: Bewerbungsunterlagen
+description: Lade hier Deine Bewerbungsunterlagen hoch # Optional
+retention_minutes: 1440 # Optional, defaults to one day
+recipient_mail: your@mail.address
+
+fields:
+  - name: Bewerbungsfoto
+    description: Lade hier dein Bewerbungsfoto hoch.
+    allowed_mimes: [image/jpeg, image/png]
+    max_size_kb: 4096
+  - name: Dokumente
+    description: Lade hier bis zu 8 PDF-Dokumente hoch
+    allowed_mimes: [application/pdf]
+    max_size_kb: 8192
+    max_count: 8

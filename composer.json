@@ -15,7 +15,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "soarecostin/file-vault": "^1.0",
-        "sunspikes/clamav-validator": "^2.2"
+        "sunspikes/clamav-validator": "^2.2",
+        "ext-yaml": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

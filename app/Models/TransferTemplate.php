@@ -21,6 +21,13 @@ class TransferTemplate extends BaseModel
         'fields',
     ];
 
+    protected $fillable = [
+        'name',
+        'description',
+        'retention_minutes',
+        'recipient_mail',
+    ];
+
     public function fields()
     {
         return $this->hasMany(TransferTemplateField::class);
