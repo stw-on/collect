@@ -18,6 +18,7 @@ RUN yarn install \
 # Stage 3: Service image
 FROM php:7.4-apache
 
+ENV APACHE_DOCUMENT_ROOT /app/public
 WORKDIR /app
 
 RUN apt-get update -y \
