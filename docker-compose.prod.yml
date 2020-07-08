@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 networks:
   web:
@@ -24,8 +24,8 @@ services:
       - 80
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.taco.rule=Host(`your-domain.com`)"
-      - "traefik.http.routers.taco.tls.certresolver=default"
+      - "traefik.http.routers.collect.rule=Host(`your-domain.com`)"
+      - "traefik.http.routers.collect.tls.certresolver=default"
   worker:
     image: stwon/collect
     env_file: .env
