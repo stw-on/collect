@@ -66,7 +66,7 @@
 </template>
 
 <script>
-  import {UploadingFile} from '../lib/UploadingFile'
+  import {UploadingFile} from '@/lib/UploadingFile'
 
   export default {
     name: 'file-field',

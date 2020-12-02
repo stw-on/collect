@@ -171,6 +171,7 @@
                 })
                 uploadingFile.id = data.id
                 uploadingFile.status = STATUS_UPLOADED
+                uploadingFile.error = null
               } catch (e) {
                 uploadingFile.progress = 0
                 uploadingFile.status = STATUS_ERROR
