@@ -1,6 +1,6 @@
 # Stage 1: Install dependencies (Composer)
 FROM composer:latest as stage1
-RUN composer global require hirak/prestissimo
+
 WORKDIR /app
 COPY . /app/
 RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs

@@ -8,7 +8,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN apt-get update -y \
     && a2enmod rewrite \
     && apt-get -y install libpq-dev libzip-dev wait-for-it git unzip wipe libyaml-dev \
-    && composer global require hirak/prestissimo \
     && docker-php-ext-install pdo pgsql pdo_pgsql zip sockets \
     && pecl install redis \
     && pecl install yaml \
