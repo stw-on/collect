@@ -41,7 +41,7 @@ services:
     command: scheduler
     restart: always
   db:
-    image: postgres:12-alpine
+    image: postgres:13-alpine
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
