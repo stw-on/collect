@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@mdi/font": "^5.3.45",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "date-fns": "^2.14.0",
     "lodash.groupby": "^4.6.0",
